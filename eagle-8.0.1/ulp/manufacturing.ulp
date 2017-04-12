@@ -1,0 +1,358 @@
+#usage "<b>Autodesk: Upload your design for manufacturing.</b>\n"
+       "<p><author>Author: Autodesk Inc.</author></p>"
+
+//Utility functions
+int isWindows()
+{
+	return (strstr(strupr(OS_SIGNATURE),"WINDOWS")>=0);
+}
+
+int isMac()
+{
+	return (strstr(strupr(OS_SIGNATURE),"MAC")>=0);
+}
+
+int isLinux()
+{
+	return (!isWindows() && !isMac());
+}
+
+//replace substring toReplace with replaceWith in srcString and returns the result
+//NOTE: This method will hang if toReplace is a substring of replaceWith!
+string strReplace(string srcString,string toReplace, string replaceWith)
+{
+	string curStr = srcString;
+	int pos = strstr(curStr,toReplace);
+
+	while(pos >= 0)
+	{
+		if(pos==0){
+			curStr=replaceWith + strsub(curStr,strlen(toReplace));
+		}
+		else{
+			curStr=strsub(curStr,0,pos) + replaceWith + strsub(curStr,pos+strlen(toReplace));
+		}
+		pos = strstr(curStr,toReplace);
+	}
+	return curStr;
+}
+
+//Quick and dirty encoding of reserved characters
+string urlEncode(string strToEncode)
+{
+    string retEncode = "";
+    string chunks[];
+    int numPercentSigns = strsplit(chunks, strToEncode, '%'); //can't use our naive strReplace routing for this
+    for(int i=0; i<numPercentSigns; ++i){
+        if(i>0){
+            retEncode += "%25";
+        }
+        retEncode += chunks[i];
+    }
+    retEncode=strReplace(retEncode,"!","%21");
+    retEncode=strReplace(retEncode,"\"","%22");
+    retEncode=strReplace(retEncode,"#","%23");
+    retEncode=strReplace(retEncode,"$","%24");
+    retEncode=strReplace(retEncode,"&","%26");
+    retEncode=strReplace(retEncode,"'","%27");
+    retEncode=strReplace(retEncode,"(","%28");
+    retEncode=strReplace(retEncode,")","%29");
+    retEncode=strReplace(retEncode,"*","%2A");
+    retEncode=strReplace(retEncode,"+","%2B");
+    retEncode=strReplace(retEncode,",","%2C");
+    retEncode=strReplace(retEncode,"/","%2F");
+    retEncode=strReplace(retEncode,":","%3A");
+    retEncode=strReplace(retEncode,";","%3B");
+    retEncode=strReplace(retEncode,"<","%3C");
+    retEncode=strReplace(retEncode,"=","%3D");
+    retEncode=strReplace(retEncode,">","%3E");
+    retEncode=strReplace(retEncode,"?","%3F");
+    retEncode=strReplace(retEncode,"@","%40");
+    retEncode=strReplace(retEncode,"[","%5B");
+    retEncode=strReplace(retEncode,"\\","%5C");
+    retEncode=strReplace(retEncode,"]","%5D");
+    retEncode=strReplace(retEncode,"^","%5E");
+    retEncode=strReplace(retEncode,"`","%60");
+    retEncode=strReplace(retEncode,"{","%7B");
+    retEncode=strReplace(retEncode,"|","%7C");
+    retEncode=strReplace(retEncode,"}","%7D");
+    return retEncode;
+}
+
+//Opens a new browser window
+string getBrowserCommand(string url)
+{
+	string cmd="";
+	if(isWindows()){
+		cmd="explorer \"[url]\"";
+	}
+	else if (isLinux()){
+	    cmd="xdg-open '[url]'";
+	} else {
+		cmd="open '[url]'";
+	}
+	return strReplace(cmd,"[url]",url);
+}
+
+//Variables
+string fileText;
+string netResult;
+string dlgUrl;
+string dlgUrlFooter;
+string dlgUrlUploadButton;
+string dlgInfoText = "Loading...";
+string boardName = "";
+string schematicName = "";
+string boardNameDisplay = "";
+string schematicNameDisplay = "";
+string projectName = "";
+int uploadBoard = 1;
+int uploadSchematic = 1;
+string dlgData;
+string dlgDataFooter;
+string dlgDataUploadButton;
+string jobID;
+string jobURL;
+string dlgHTML;
+string dlgTitle;
+string fileProps;
+string vals[];
+int agreeToS = 0;
+
+//URLs
+sprintf(dlgUrl,"https://circuits.io/eagle/dialogs/dialog?OS=%s&VERSION=%d&RELEASE=%d&SIGNATURE=%s",
+    urlEncode(OS_SIGNATURE),EAGLE_VERSION,EAGLE_RELEASE,urlEncode(EAGLE_SIGNATURE));
+sprintf(dlgUrlFooter,"https://circuits.io/eagle/dialogs/dialogfooter?OS=%s&VERSION=%d&RELEASE=%d&SIGNATURE=%s",
+    urlEncode(OS_SIGNATURE),EAGLE_VERSION,EAGLE_RELEASE,urlEncode(EAGLE_SIGNATURE));
+sprintf(dlgUrlUploadButton,"https://circuits.io/eagle/dialogs/dialoguploadbutton?OS=%s&VERSION=%d&RELEASE=%d&SIGNATURE=%s",
+    urlEncode(OS_SIGNATURE),EAGLE_VERSION,EAGLE_RELEASE,urlEncode(EAGLE_SIGNATURE));
+string postUrl = "https://circuits.io/jobs";
+
+dlgDialog("Autodesk Export to Manufacturing") {
+    dlgLabel(dlgInfoText, 1);
+
+    if (netget(dlgData, dlgUrl) >= 0
+        && netget(dlgDataFooter, dlgUrlFooter) >= 0
+        && netget(dlgDataUploadButton, dlgUrlUploadButton) >= 0)  {
+        //show the main HTML
+        dlgInfoText = dlgData;
+
+        if(board) {
+            board(B){
+                projectName = filesetext(B.name,"");
+                projectName = strsub(projectName,strlen(filedir(B.name)));
+                boardName = B.name;
+                boardNameDisplay = strsub(boardName,strlen(filedir(B.name)));
+
+                //try to guess the schematic name from the board name
+                schematicName = filesetext(boardName, ".sch");
+                string dummy[];
+                if(fileglob(dummy,schematicName)!=1){
+                    schematicName = "";
+                    schematicNameDisplay = "";
+                } else {
+                    schematicNameDisplay = strsub(schematicName,strlen(filedir(schematicName)));
+                }
+            }
+        }
+
+        if(schematic){
+            schematic(S){
+                projectName = filesetext(S.name,"");
+                projectName = strsub(projectName,strlen(filedir(S.name)));
+                schematicName = S.name;
+                schematicNameDisplay = strsub(schematicName,strlen(filedir(S.name)));
+
+                if(strlen(boardName)==0){
+                    //try to guess the board name from the schematic name
+                    boardName = filesetext(schematicName, ".brd");
+                    string dummy[];
+                    if(fileglob(dummy,boardName)!=1){
+                        boardName = "";
+                        boardNameDisplay = "";
+                    } else {
+                        boardNameDisplay = strsub(boardName,strlen(filedir(boardName)));
+                    }
+                }
+            }
+        }
+
+        dlgGroup(""){
+            dlgHBoxLayout {
+                dlgLabel("Project Name:");
+                dlgStringEdit(projectName);
+                if(isMac()){
+                    dlgSpacing(7); //fix alignment on Mac
+                }
+            }
+
+            dlgHBoxLayout {
+                uploadBoard = strlen(boardName)>0;
+                dlgLabel("Board File (.brd):");
+                dlgStretch(1);
+                dlgLabel(boardNameDisplay, 1);
+                dlgCheckBox("Upload", uploadBoard) {
+                    if(strlen(boardName)==0){
+                        uploadBoard = 0;
+                    }
+                }
+
+                dlgPushButton("Select File") {
+                    string newBoardFile = dlgFileOpen("Select &Board File",boardName,"Eagle Board File (*.brd)");
+                    if(strlen(newBoardFile)>0){
+                        boardName = newBoardFile;
+                        boardNameDisplay = strsub(boardName,strlen(filedir(boardName)));
+                        uploadBoard = 1;
+                    }
+                }
+            }
+            dlgHBoxLayout {
+                uploadSchematic = strlen(schematicName)>0;
+                dlgLabel("Schematic File (.sch):");
+                dlgStretch(1);
+                dlgLabel(schematicNameDisplay, 1);
+                dlgCheckBox("Upload", uploadSchematic) {
+                    if(strlen(schematicName)==0){
+                        uploadSchematic = 0;
+                    }
+                }
+                dlgPushButton("Select File") {
+                    string newSchematicFile = dlgFileOpen("Select &Schematic File",boardName,"Eagle Schematic File (*.sch)");
+                    if(strlen(newSchematicFile)>0){
+                        schematicName = newSchematicFile;
+                        schematicNameDisplay = strsub(schematicName,strlen(filedir(schematicName)));
+                        uploadSchematic = 1;
+                    }
+                }
+            }
+
+            dlgHBoxLayout {
+                    dlgGridLayout {
+                        dlgCell(0,0) dlgCheckBox("", agreeToS) { }
+                        dlgCell(0,1,0,15) dlgLabel(dlgDataUploadButton);
+                    }
+                    dlgPushButton("+Upload Design") {
+                        string boardData = "";
+                        string schematicData = "";
+
+                        if(boardName && uploadBoard){
+                            fileread(boardData, boardName);
+                            if(strlen(boardData)==0){
+                                uploadBoard = 0;
+                            }
+                        }
+                        if(schematicName  && uploadSchematic){
+                            fileread(schematicData, schematicName);
+                            if(strlen(schematicData)==0){
+                                uploadSchematic = 0;
+                            }
+                        }
+
+                        if(uploadBoard || uploadSchematic){
+                            if(agreeToS){
+                                //This is a quick and dirty hack to upload multipart/form-data
+                                sprintf(fileProps,
+                                    "{\"projectName\": \"%s\", \"OS\": \"%s\", \"eagleVersion\": %d, \"eagleRelease\": %d, \"eagleSignature\": \"%s\"}",
+                                    urlEncode(projectName), urlEncode(OS_SIGNATURE),EAGLE_VERSION,EAGLE_RELEASE,urlEncode(EAGLE_SIGNATURE));
+                                fileText = "";
+
+                                //specify the request type
+                                fileText = fileText+
+                                    "------WebKitFormBoundaryARSECnzm3ydVd9A4\r\nContent-Disposition: form-data; name=\"type\"\r\n\r\n"+
+                                    "eagle_import\r\n";
+
+                                if(uploadBoard){
+                                    fileText = fileText +
+                                        "------WebKitFormBoundaryARSECnzm3ydVd9A4\r\nContent-Disposition: form-data; name=\"brd\"; filename=\""+
+                                        boardName+"\"\nContent-Type: application/octet-stream\r\n\r\n"+
+                                        boardData+ "\r\n";//\r\n------WebKitFormBoundaryARSECnzm3ydVd9A4--\r\n";
+                                }
+                                if(uploadSchematic){
+                                    fileText = fileText+
+                                        "------WebKitFormBoundaryARSECnzm3ydVd9A4\r\nContent-Disposition: form-data; name=\"sch\"; filename=\""+
+                                        schematicName+"\"\nContent-Type: application/octet-stream\r\n\r\n"+
+                                        schematicData+ "\r\n";//\r\n------WebKitFormBoundaryARSECnzm3ydVd9A4--\r\n";
+                                }
+                                fileText = fileText+
+                                    "------WebKitFormBoundaryARSECnzm3ydVd9A4\r\nContent-Disposition: form-data; name=\"format\"\r\n\r\n"+
+                                        "eagle\r\n";
+
+                                fileText = fileText+
+                                    "------WebKitFormBoundaryARSECnzm3ydVd9A4\r\nContent-Disposition: form-data; name=\"data\"\r\n\r\n"+
+                                    fileProps + "\r\n\r\n------WebKitFormBoundaryARSECnzm3ydVd9A4--\r\n";
+
+
+                                if (netpost(netResult,postUrl, fileText,100,"multipart/form-data; boundary=----WebKitFormBoundaryARSECnzm3ydVd9A4") >= 0) {
+                                    // process Result
+                                    dlgAccept();
+                                    int noEntries=strsplit(vals,netResult,'\n');
+                                    jobID = vals[0];
+                                    jobURL = vals[1];
+                                    dlgTitle = vals[2];
+                                    dlgHTML = "";
+                                    //read the HTML page line by line
+                                    for(int i=3; i<noEntries; ++i){
+                                        dlgHTML += vals[i]+"\n";
+                                    }
+                                    //open a browser window
+                                    system(getBrowserCommand(jobURL));
+                                    dlgDialog(dlgTitle) {
+                                        dlgLabel(dlgHTML);
+
+                                        dlgGridLayout{
+                                            dlgCell(0,0,0,1) dlgLabel("<a href=\""+jobURL+"\">"+jobURL+"</a>");
+                                            dlgCell(0,2) {
+                                                dlgPushButton("&View Design"){
+                                                    system(getBrowserCommand(jobURL));
+                                                }
+                                                dlgPushButton("+Close"){
+                                                    dlgAccept();
+                                                }
+                                            }
+                                        }
+                                    };
+                                }
+                                else {
+                                    dlgDialog("Something went wrong"){
+                                        string errorText = "<html>"+
+                                        "<h2>Something went wrong</h2>"+
+                                        "<p>An active internet connection is required to complete the upload. Please check your network settings and try again.</p>"+
+                                        "<p><b>Error</b><br>"+
+                                        neterror()+
+                                        "<p><br>Learn more in the <a href=\"https://support.circuits.io/hc/en-us/categories/203292707-Eagle-Documentation\">Help Center</a>.</p>"+
+                                        "</html>";
+                                        dlgLabel(errorText);
+                                    };
+                                }
+                            } else {
+                                dlgMessageBox("Please agree to the Terms of Service.");
+                            }
+                        } else {
+                            dlgMessageBox("Please select an Eagle board and/or schematic to upload.");
+                        }
+
+                    };
+            }
+        }
+
+        //show the footer HTML
+        dlgLabel(dlgDataFooter);
+        //make sure to update the dialog
+        dlgRedisplay();
+    }
+    else {
+        dlgInfoText = "<html>"+
+                      "<h2>Something went wrong</h2>"+
+                      "<p>An active internet connection is required. Please check your network settings and try again.</p>"+
+                      "<p><b>Error</b><br>"+
+                      neterror()+
+                      "<p><br>Learn more in the <a href=\"https://support.circuits.io/hc/en-us/categories/203292707-Eagle-Documentation\">Help Center</a>.</p>"+
+                      "</html>";
+        dlgRedisplay();
+    }
+};
+
+
+
+
+

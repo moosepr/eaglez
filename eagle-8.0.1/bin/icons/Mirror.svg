@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="40px" viewBox="0 0 41 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Mirror</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 0.000000)">
+            <g transform="translate(-1.000000, 0.000000)">
+                <g transform="translate(0.500000, 1.000000)">
+                    <path d="M20.1460993,37.125 L20.1460993,0.875" stroke="#8C8C8C" stroke-width="2.75"></path>
+                    <path d="M0.446983802,9.7115185 C0.446983802,8.05798424 1.20350176,7.82986357 2.13404953,9.19807914 L13.40449,25.7693854 C14.3362306,27.139355 13.7400791,28.2499347 12.0926695,28.2499347 L3.44586996,28.2499347 C1.78963087,28.2499347 0.446983802,26.9029863 0.446983802,25.2559461 L0.446983802,9.7115185 Z" fill="#3C3C3C" transform="translate(7.146099, 18.277278) scale(-1, 1) translate(-7.146099, -18.277278) "></path>
+                    <path d="M26.4469838,9.7115185 C26.4469838,8.05798424 27.2035018,7.82986357 28.1340495,9.19807914 L39.40449,25.7693854 C40.3362306,27.139355 39.7400791,28.2499347 38.0926695,28.2499347 L29.44587,28.2499347 C27.7896309,28.2499347 26.4469838,26.9029863 26.4469838,25.2559461 L26.4469838,9.7115185 Z" fill="#3C3C3C"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

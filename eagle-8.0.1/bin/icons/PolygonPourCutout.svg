@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>PolygonPourCutout</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-0.262067, 0.237551)">
+            <g transform="translate(0.857143, 0.000000)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <polygon fill="#AEAAAA" points="0 0 40 0 40 40 0 40"></polygon>
+                    <g transform="translate(10.416500, 7.229000)" fill="#FFFFFF">
+                        <polygon points="19 0 0.16875 0 0.16875 10.19625 0.16875 15.1875 3.3775 15.1875 10.67 22.33125 10.67 25.54125 19 25.54125"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

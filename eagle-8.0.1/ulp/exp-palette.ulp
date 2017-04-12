@@ -1,0 +1,138 @@
+#usage "<b>Export of Palette</b>\n"
+       "<p>"
+       "This ULP can export your current color palette or all palettes as an EAGLE script file."
+       "<p>"
+       "<author>Author: jorge@cadsoftusa.com</author>"
+
+/******************************************************************************
+* Jorge Garcia, CadSoft Computer
+* March 14, 2016
+*
+* Copyright (c) 2016 Newark, Premier Farnell DBA CadSoft Computer
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+* IN THE SOFTWARE.
+******************************************************************************/
+
+
+
+/******************************************************************************
+*                               REVISION HISTORY                              *
+*                                                                             *
+*      V1.0        Initial Release- export_palette() by Franz                 *
+*                                                                             *
+******************************************************************************/
+
+
+
+
+/******************************************************************************
+*                       GLOBAL VARIABLES AND DEFINITIONS                      *
+******************************************************************************/
+
+
+string Version = "1.0";
+
+
+/******************************************************************************
+*                               NON-GUI FUNCTIONS                             *
+******************************************************************************/
+
+
+
+/******************************************************************************
+*                             export_palette()
+* Description:     This function outputs a .scr file which contains either the
+*                  current palette or all of the palettes depending on the
+*                  value of the currentPalette argument.
+*
+* Argument(s):     filePath    Contains the path for the output file
+*
+*                  currentPalette     0 = output all of the palettes
+*                                     1 = output only the current palette
+*
+* Caller(s):       main()
+*
+******************************************************************************/
+
+
+void export_palette(string filePath, int currentPalette)
+{
+  output (filePath, "wt") {
+    string PaletteNames[];
+
+    PaletteNames[PALETTE_BLACK] = "black";
+    PaletteNames[PALETTE_WHITE] = "white";
+    PaletteNames[PALETTE_COLORED] = "colored";
+    for (int t = 0; t < PALETTE_TYPES; ++t) {
+      if (currentPalette && (palette(0) != palette(0, t))) {
+        continue;
+      }
+      printf("\nset palette %s;\n\n", PaletteNames[t]);
+      for (int i = t == PALETTE_WHITE ? 1 : 0; i < PALETTE_ENTRIES; ++i) {
+        printf("set palette %2d 0x%08X;\n", i, palette(i, t));
+      }
+      if (currentPalette) {
+        break;
+      }
+    }
+  }
+  exit(EXIT_SUCCESS);
+}
+
+/******************************************************************************
+*                                   MAIN()                                    *
+******************************************************************************/
+
+
+int main()
+{
+  int paletteSelection = 0;
+  string outputPath = path_scr[0] + '/' + "palette-sample.scr";
+
+  int result = dlgDialog("Export Palette") {
+    dlgGridLayout {
+      dlgCell(0,0,1,1) {
+        dlgGroup("Export:") {
+          dlgRadioButton("All Palettes", paletteSelection);          // paletteSelection = 0
+          dlgRadioButton("Current Palette", paletteSelection);       // paletteSelection = 1
+        }
+      }
+      dlgCell(2,0) dlgLabel("Path:");
+      dlgCell(2,1) dlgStringEdit(outputPath);
+      dlgCell(2,2) dlgPushButton("Browse...") {
+        string newPath;
+
+        newPath = dlgFileSave("Please select where to store Palette script", outputPath , "*.scr");
+        if (newPath) {
+          if(fileext(newPath) != ".scr") {
+            newPath = newPath + ".scr";
+          }
+          outputPath = newPath;
+        }
+      }
+      dlgCell(3,0,3,2) dlgHBoxLayout {
+        dlgStretch(1);         //Allows for a larger dialog and avoids buttons being streched out
+        dlgPushButton("Export") export_palette(outputPath, paletteSelection);
+        dlgPushButton("-Cancel") dlgReject();
+      }
+      dlgCell(4,1) dlgSpacing(400);    //Allows the outputPath field to have some width
+    }
+  };
+  return result;
+}

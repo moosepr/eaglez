@@ -1,0 +1,132 @@
+#usage "<b>Copy attributes from Schematic to Board</b>"
+       "<p>"
+       "This ULP copies all of the attributes from the schematic to the board. "
+	   "Very simple implementation does not check what's on the board. Run from "
+	   "schematic. Useful for attribute inconsistencies. "
+       "</p>"
+       "<author>Jorge Garcia jorge@cadsoftusa.com</author> 03/01/2016 "
+
+/******************************************************************************
+* Jorge Garcia, Cadsoft Computer
+* March 1, 2016
+*
+* Copyright (c) 2016 Newark, Premier Farnell DBA Cadsoft Computer
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+* IN THE SOFTWARE.
+******************************************************************************/
+
+
+
+/******************************************************************************
+*                               REVISION HISTORY                              *
+*																			                                        *
+*	03/01/2016		Initial Implementation V1.0 							                    *
+*                                                                             *
+* 03/31/2016    Added a check for package to avoid errors in board V1.1       *
+*																			                                        *
+******************************************************************************/
+
+
+
+/******************************************************************************
+*                               NON-GUI FUNCTIONS                             *
+******************************************************************************/
+
+
+
+/******************************************************************************
+*                             extract_attributes()
+* Description:  This function extracts all of the attributes of all of the
+*               components in the schematic. Writes to a script file.
+*
+* Argument(s):  None
+*
+* Return(s):    None
+*
+* Caller(s):    main()
+*
+* Notes:        None
+******************************************************************************/
+
+
+void extract_attributes() {
+  schematic(S) {
+    S.allparts(P) {
+      if (P.device.package) {       //Checks if a given part has a package
+        P.attributes(A) {
+          printf("ATTRIBUTE %s %s '%s';\n", P.name, A.name, A.value);
+        }
+      }
+    }
+  }
+}
+
+
+/******************************************************************************
+*                                  get_project_path()
+*
+* Description:  Returns project path, if in board or schematic, otherwise
+*               it will return the library path
+*
+* Arguments:    none
+*
+* Return:       p       String containing full path of project
+*
+* Caller:       main()
+*
+******************************************************************************/
+
+
+string get_project_path() {
+  string s = "", p = "";;
+  if (library)  { library(L)   s = L.name;}
+  if (board)    { board(B)     s = B.name;}
+  if (schematic){ schematic(S) s = S.name;}
+  char c = '/';
+  int pos = strrchr(s, c);
+  if (pos >= 0) {
+    p = strsub(s, 0, pos + 1);
+  }
+  return p;
+}
+
+
+/******************************************************************************
+*                                   MAIN()                                    *
+******************************************************************************/
+
+
+void main() {
+
+string project_path = get_project_path();
+string filepath = project_path + "attribute_copy.scr";
+
+  if (schematic) {                  // Make sure we are in schematic
+    output(filepath, "wt") {
+      printf("EDIT .brd;\n");
+      extract_attributes();
+    }
+
+    exit("SCRIPT '" + filepath + "'");
+  }
+  else {
+    dlgMessageBox("Start this ULP in the schematic", "OK");
+    exit(0);
+  }
+}

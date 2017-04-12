@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>DimensionHorizontal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.452219, 0.237551)">
+            <g transform="translate(0.000000, 0.500000)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(1.250000, 1.250000)">
+                                    <g transform="translate(5.377500, 14.235875)">
+                                        <path d="M4,8.75 L0.28125,4.995 C0.06125,4.79 0.05875,4.44375 0.285,4.2425 L4.04125,0.52 C4.3675,0.18625 4.9475,0.43125 4.945,0.90875 L4.94,2.5025 L4.91625,6.77375 L4.90875,8.3875 C4.90375,8.84375 4.3225,9.08 4,8.75" fill="#444443"></path>
+                                    </g>
+                                    <g transform="translate(9.375000, 14.263000)">
+                                        <path d="M18.75,0.25 L22.46875,4.00875 C22.685,4.2125 22.6875,4.56 22.4675,4.75625 L18.7075,8.4825 C18.38625,8.81375 17.8025,8.57125 17.805,8.09375 L17.84,5.3725 L0.79125,5.35625 L0.755,3.575 L17.8025,3.58375 L17.84125,0.615 C17.84375,0.15875 18.42625,-0.08 18.75,0.25" fill="#444443"></path>
+                                    </g>
+                                    <g transform="translate(0.729375, 14.010625)">
+                                        <path d="M0,8.75 L0,0.72875" stroke="#8A8A89" stroke-width="3.75"></path>
+                                    </g>
+                                    <g transform="translate(36.875000, 0.520625)">
+                                        <path d="M0,36.25 L0,0.3125" stroke="#8A8A89" stroke-width="3.75"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

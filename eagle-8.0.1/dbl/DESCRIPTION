@@ -1,0 +1,20 @@
+﻿<language de>
+<b>Designblöcke</b>
+<p>
+Designblöcke dienen dazu Teile einer Schaltung und Platine wieder zu verwenden.
+Damit können wiederkehrende Aufgaben schneller gelöst werden.
+Verwendet werden können Designblöcke mit dem <b>"PASTE DBL"</b>.
+Zum Erstellen eines Designblocks dient der Befehl <b>"WRITE DBL"</b>.
+Falls nur aus einem Teil der Schaltung ein Designblock erzeugt werden soll,
+kann dieser über das Menü <b>Datei->"Save Selection as Designblock"</b> erstellt werden.
+</language>
+<language en>
+<b>Design Blocks</b>
+<p>
+Design blocks should improve the reuse of parts of schematics and boards.
+With this feature it is easy to reuse a solution for a periodic task.
+Design blocks are accessible with the command <b>"PASTE DBL"</b>.
+A design block can created with the command <b>"WRITE DBL"</b>.
+It's also possible to select just a part from current board or schematic
+and this can be done with <b>File->"Save Selection as Design Block"</b>.
+</language>

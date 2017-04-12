@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="37px" viewBox="0 0 36 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Junction</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40.625 40 40.625 40 0.625 0 0.625"></polygon>
+        <polygon id="path-3" points="0 40.625 40 40.625 40 0.625 0 0.625"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-2.007812, -2.170314)">
+            <g>
+                <g transform="translate(20.000000, 20.500000) scale(1, -1) translate(-20.000000, -20.500000) ">
+                    <g transform="translate(2.187000, 20.000250)" fill="#AEAAAA">
+                        <path d="M0,0.625 L35.625,0.625 L0,0.625 Z"></path>
+                    </g>
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(1.250000, 20.000000)">
+                                    <g transform="translate(0.937500, 0.000000)">
+                                        <path d="M0,0.625 L35.625,0.625" stroke="#8A8A89" stroke-width="4.375"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(19.786250, 2.187000)" fill="#AEAAAA">
+                        <path d="M0.25,0.625 L0.1775,36.25 L0.25,0.625 Z"></path>
+                    </g>
+                    <g>
+                        <g>
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-4)">
+                                <g transform="translate(12.250000, 2.250000)">
+                                    <g transform="translate(7.714000, 0.312500)">
+                                        <path d="M0,35.875 L0.0725,0.25" stroke="#8A8A89" stroke-width="4.375"></path>
+                                    </g>
+                                    <g transform="translate(0.119000, 10.567000)">
+                                        <path d="M1.5,12.125 C3.87375,15.49875 8.56125,16.3375 11.9775,13.93 C15.335,11.5575 16.14,6.85375 13.76625,3.47875 C11.37875,0.09375 6.7,-0.6975 3.335,1.67375 C-0.07875,4.08 -0.88625,8.74375 1.5,12.125" fill="#42AB3D"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
