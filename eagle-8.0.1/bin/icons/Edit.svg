@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-0.194265, -0.790769)">
+            <g transform="translate(0.823242, 0.000000)">
+                <g transform="translate(20.000000, 21.375000) scale(1, -1) translate(-20.000000, -21.375000) translate(0.000000, 0.750000)">
+                    <polygon fill="#AEAAAA" points="0.05375 9.96 32.30375 9.96 32.30375 40.00125 0.05375 40.00125 0.05375 9.96"></polygon>
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(0.000000, 2.500000)">
+                                    <g transform="translate(4.870000, 21.899375)">
+                                        <path d="M3.75,7.5 C2.8825,6.265 3.17875,4.58 4.4,3.7225 C5.64,2.84625 7.3425,3.12125 8.21375,4.355 C9.0825,5.58875 8.7675,7.28375 7.525,8.15875 C6.30625,9.0175 4.62125,8.73375 3.75,7.5 M10.59875,2.675 C8.80625,0.13 5.27625,-0.5 2.7,1.31375 C0.1675,3.1 -0.44,6.64875 1.35,9.19125 C3.1475,11.74 6.6775,12.3375 9.21125,10.55125 C11.785,8.7375 12.3975,5.2225 10.59875,2.675" fill="#444443"></path>
+                                    </g>
+                                    <g transform="translate(15.169125, 28.285500)">
+                                        <path d="M0,0 L17.1475,0" stroke="#444443" stroke-width="3.75"></path>
+                                    </g>
+                                    <g transform="translate(0.000625, 28.285500)">
+                                        <path d="M0,0 L5.68875,0" stroke="#444443" stroke-width="3.75"></path>
+                                    </g>
+                                    <g transform="translate(13.194625, 3.123750)">
+                                        <path d="M13.75,2.5 L13.75,2.1775 C13.75,0.92 15.27125,0.1925 16.25375,1.0175 L25.40875,8.645 C26.13375,9.24375 26.13375,11.62875 25.40875,12.23625 L16.25375,19.865 C15.2725,20.67875 12.63875,19.96125 12.63875,18.68875 L12.63875,12.87125 L0.55625,12.87125 L0.55625,2.5 L13.75,2.5 Z" fill="#FFFFFF"></path>
+                                    </g>
+                                    <g transform="translate(15.686000, 1.169375)">
+                                        <path d="M12.5,6.25 L12.5,1.80875 C12.5,0.59125 13.9725,-0.11375 14.9225,0.68625 L23.7875,8.07125 C24.49,8.65 24.49,9.74875 23.7875,10.3375 L14.9225,17.725 C13.9725,18.515 12.5,17.8175 12.5,16.585 L12.5,12.16125 L0.5125,12.16125 L0.5125,6.25 L12.5,6.25 Z" fill="#444443"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>UndoDelimiter</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.308990, 0.055910)">
+            <g transform="translate(0.071615, 0.090820)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(5.000000, 7.500000)">
+                                    <g transform="translate(0.634750, 0.520000)">
+                                        <path d="M13.75,8.75 L13.75,2.97875 C13.75,1.39125 15.66375,0.47625 16.90375,1.51625 L28.43,11.12125 C29.34375,11.875 29.34375,13.3025 28.43,14.06625 L16.90375,23.67625 C15.66375,24.70125 13.75,23.79625 13.75,22.1925 L13.75,16.44 L0.25,16.44 L0.25,8.75 L13.75,8.75 Z" stroke="#5C5C5B" stroke-width="2.5"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

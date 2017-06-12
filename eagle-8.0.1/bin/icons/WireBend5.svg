@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>WireBend5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.452219, 0.237551)">
+            <g transform="translate(0.128906, 0.681641)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(1.250000, 8.750000)">
+                                    <g transform="translate(0.607875, 0.695750)">
+                                        <path d="M36.25,21.25 L18.15,21.25 C11.015,21.25 -1.1725,18.765 0.13,0.01625" stroke="#444443" stroke-width="3.75"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

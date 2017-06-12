@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>OK</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.366281, 0.055910)">
+            <g transform="translate(0.542969, 0.090820)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(0.000000, 5.000000)">
+                                    <g transform="translate(0.605500, 0.670750)">
+                                        <path d="M36.25,26.25 C34.46625,28.03375 31.58625,28.03375 29.81125,26.25 L15.4275,12.07 L8.9675,18.54125 C7.19625,20.31375 4.30625,20.31375 2.52125,18.54125 C0.74875,16.7475 0.74875,13.85375 2.52125,12.07 L12.19625,2.3975 C13.98375,0.62875 16.87375,0.62875 18.6575,2.3975 L36.25,19.81 C38.04625,21.595 38.04625,24.4725 36.25,26.25" fill="#79B935"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Cut</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-0.162364, 0.055910)">
+            <g transform="translate(0.307292, 0.090820)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(0.000000, 5.000000)">
+                                    <g transform="translate(27.833250, 1.185250)">
+                                        <path d="M3.75,6.25 C3.75,4.865 4.87,3.74375 6.26,3.74375 C7.64625,3.74375 8.76875,4.865 8.76875,6.25 C8.76875,7.64 7.64625,8.76625 6.26,8.76625 C4.87,8.76625 3.75,7.64 3.75,6.25 M6.26,12.12 C9.4875,12.12 12.11,9.49375 12.11,6.25 C12.11,3.01375 9.4875,0.39375 6.26,0.39375 C3.02,0.39375 0.40125,3.01375 0.40125,6.25 C0.40125,9.49375 3.02,12.12 6.26,12.12" fill="#444443"></path>
+                                    </g>
+                                    <g transform="translate(27.833250, 17.779500)">
+                                        <path d="M3.75,6.25 C3.75,4.86375 4.87,3.735 6.26,3.735 C7.64625,3.735 8.76875,4.86375 8.76875,6.25 C8.76875,7.635 7.64625,8.76 6.26,8.76 C4.87,8.76 3.75,7.635 3.75,6.25 M6.26,12.09625 C9.4875,12.09625 12.11,9.48 12.11,6.25 C12.11,3.00375 9.4875,0.38 6.26,0.38 C3.02,0.38 0.40125,3.00375 0.40125,6.25 C0.40125,9.48 3.02,12.09625 6.26,12.09625" fill="#444443"></path>
+                                    </g>
+                                    <g transform="translate(0.784875, 6.406875)">
+                                        <polyline stroke="#444443" stroke-width="4.00000006" points="1.25 16.25 28.2 9.2525 1.225 1.03625"></polyline>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

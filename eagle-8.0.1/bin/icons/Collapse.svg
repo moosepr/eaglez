@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Collapse</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.452219, 0.237551)">
+            <g>
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g transform="translate(0.000000, 0.000500)" fill="#AEAAAA">
+                        <polygon points="0 40 0 0.0475 28.35875 0.0475 40 0.0475 40 40"></polygon>
+                    </g>
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(6.250000, 16.250000)">
+                                    <g transform="translate(0.129375, 0.024375)">
+                                        <path d="M22.5,7.5 L17.3525,7.50625 L9.89375,7.51875 L4.7375,7.50125 C2.68375,7.49125 1.0275,5.83375 1.0125,3.77625 C1.0325,1.72625 2.6875,0.07125 4.71125,0.07875 L9.90375,0.05625 L17.33875,0.07125 L22.52125,0.06375 C24.57625,0.07625 26.21625,1.71625 26.2275,3.7725 C26.21875,5.81375 24.5425,7.49125 22.5,7.5" fill="#444443"></path>
+                                    </g>
+                                    <g transform="translate(0.129375, 0.024375)">
+                                        <path d="M22.5,7.5 L17.3525,7.50625 L9.89375,7.51875 L4.7375,7.50125 C2.68375,7.49125 1.0275,5.83375 1.0125,3.77625 C1.0325,1.72625 2.6875,0.07125 4.71125,0.07875 L9.90375,0.05625 L17.33875,0.07125 L22.52125,0.06375 C24.57625,0.07625 26.21625,1.71625 26.2275,3.7725 C26.21875,5.81375 24.5425,7.49125 22.5,7.5 Z" stroke="#AEAAAA" stroke-width="2.5"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

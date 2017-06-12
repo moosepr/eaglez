@@ -1,0 +1,7 @@
+-- OpenSUSE/SUSE Linux
+We are aware of a sporadic issue with OpenSSL on OpenSUSE/SUSE linux.
+If you encounter a segmentation fault when starting EAGLE (./eagle), please try running the following commands in a terminal in the EAGLE directory:
+
+sudo zypper install libopenssl-devel
+cp /lib64/libssl.so.1.0.0 lib/libssl.so.10
+cp /lib64/libcrypto.so.1.0.0 lib/libcrypto.so.10

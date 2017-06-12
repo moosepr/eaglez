@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Pinswap</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="40" height="40"></rect>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g></g>
+                    <g mask="url(#mask-2)">
+                        <g transform="translate(2.000000, -6.733887)">
+                            <g stroke-width="1" fill="none" transform="translate(21.000000, 11.298706)">
+                                <rect fill="#3C3C3C" x="0.411132812" y="0.513183594" width="13.4853516" height="3.26708984" rx="1"></rect>
+                                <rect fill="#8C8C8C" x="0.411132812" y="14.0966797" width="13.4853516" height="3.26708984" rx="1"></rect>
+                                <rect fill="#8C8C8C" x="0.411132812" y="27.6801758" width="13.4853516" height="3.26708984" rx="1"></rect>
+                            </g>
+                            <rect fill="#AEAAAA" x="31.328125" y="0.83984375" width="15.0888672" height="52.5151367"></rect>
+                            <g stroke-width="1" fill="none" transform="translate(0.550781, 7.608887)">
+                                <path d="M11.8796087,6.49692766 C5.61133464,7.79463061 0.900000095,13.3471197 0.900000095,20 C0.900000095,26.1607218 4.94005924,31.3778372 10.5153274,33.1464961" stroke="#3C3C3C" stroke-width="4"></path>
+                                <path d="M4.29146349,11.9630322 C3.8237066,11.938627 3.48451448,11.5093826 3.5542677,11.0227141 L4.62228384,2.72392459 C4.67562454,1.97454129 5.60703518,1.67737206 6.07479206,2.27314613 L7.63398168,4.26001679 L11.8068655,9.59470707 L13.3797322,11.6102897 C13.8256057,12.1816586 13.3687905,13.0760375 12.6657875,12.9999507 L4.29146349,11.9630322 Z" fill="#3C3C3C" transform="translate(8.550798, 7.480364) scale(1, -1) rotate(-123.000000) translate(-8.550798, -7.480364) "></path>
+                                <path d="M4.29146349,36.6132726 C3.8237066,36.5888674 3.48451448,36.159623 3.5542677,35.6729545 L4.62228384,27.374165 C4.67562454,26.6247817 5.60703518,26.3276124 6.07479206,26.9233865 L7.63398168,28.9102572 L11.8068655,34.2449475 L13.3797322,36.2605301 C13.8256057,36.831899 13.3687905,37.7262779 12.6657875,37.6501911 L4.29146349,36.6132726 Z" fill="#3C3C3C" transform="translate(8.550798, 32.130604) rotate(-123.000000) translate(-8.550798, -32.130604) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Forward_D</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.452219, 0.237551)">
+            <g>
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(3.750000, 7.500000)">
+                                    <g transform="translate(0.379625, 0.141625)">
+                                        <path d="M15,8.75 L15,2.375 C15,0.625 17.11375,-0.38625 18.47875,0.76125 L31.2075,11.365 C32.215,12.1975 32.215,13.775 31.2075,14.61875 L18.47875,25.2275 C17.11375,26.36 15,25.35875 15,23.58875 L15,17.23875 L0.5675,17.23875 L0.5675,8.75 L15,8.75 Z" fill="#AEAAAA"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

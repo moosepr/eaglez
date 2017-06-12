@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Redo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 40 40 40 40 0 0 0"></polygon>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.452219, 0.237551)">
+            <g transform="translate(0.000000, 0.500000)">
+                <g transform="translate(20.000000, 20.000000) scale(1, -1) translate(-20.000000, -20.000000) ">
+                    <g>
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g></g>
+                            <g mask="url(#mask-2)">
+                                <g transform="translate(-1.250000, 6.250000)">
+                                    <g transform="translate(0.057375, 0.040250)">
+                                        <path d="M1.25,10 C3.94125,16.71 11.76875,19.61625 18.845,16.8275 C21.83,15.65375 24.26,13.5675 25.8,10.98375 L20.89375,8.9775 C19.76875,8.52625 19.79875,6.94375 20.9775,6.48125 L27.77875,3.7675 L34.1725,1.24375 C34.47625,1.12625 34.85125,1.12 35.16625,1.235 C35.5275,1.35625 35.8525,1.5875 36.01125,1.95375 L36.0875,2.145 L36.785,3.88 L41.1025,14.54 C41.53625,15.62625 40.31875,16.7875 39.19,16.3475 L34.21375,14.28125 C33.535,15.54 32.73375,16.71 31.8325,17.8425 C30.63875,19.33125 29.27625,20.655 27.7425,21.8225 C26.04125,23.11 24.1425,24.16 22.11,24.9625 C10.31125,29.61 5.67625,21.19125 1.1925,10.025 L1.25,10 Z" fill="#444443"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
